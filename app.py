@@ -18,10 +18,10 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 # database engine
 engine = sqlalchemy.create_engine(os.getenv('SQL_URI'))
 
-events_hr = RateLimit(200, 60*60)
-events_da = RateLimit(200, 60*24*60)
-stats_hr = RateLimit(200, 60*60)
-stats_da = RateLimit(200, 60*24*60)
+events_hr = RateLimit(20, 60*60)
+events_da = RateLimit(20, 60*24*60)
+stats_hr = RateLimit(20, 60*60)
+stats_da = RateLimit(20, 60*24*60)
 
 events_hr_poi = RateLimit(200, 60*60)
 events_da_poi = RateLimit(200, 60*24*60)
